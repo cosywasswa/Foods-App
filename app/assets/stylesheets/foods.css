@@ -1,0 +1,38 @@
+.foods-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foods-table {
+  width: 70rem;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+.foods-table th,
+.table td {
+  border: 1px solid #afabab;
+}
+
+.custom-table-row {
+  border: 1px solid black;
+}
+
+.food-head th {
+  text-align: left;
+  padding-block: 1rem;
+  border-right: 1px solid black;
+}
+
+.custom-table-row td {
+  text-align: left;
+  padding: 1rem;
+  border-right: 1px solid black;
+}
+
+.custom-table-row:nth-child(even) {
+  background-color: #afabab;
+}
