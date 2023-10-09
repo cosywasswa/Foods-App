@@ -3,7 +3,7 @@ class RecipeFoodsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe_food = @recipe.recipes_foods.create(quantity: params[:quantity], food_id: params[:food_id])
+    @recipe_food = @recipe.recipe_foods.create(quantity: params[:quantity], food_id: params[:food_id])
     if @recipe_food.save
       flash[:notice] = 'Food created successfully.'
       redirect_to user_recipe_url(@recipe.user, @recipe)
@@ -28,7 +28,7 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe_food = @recipe.recipes_foods.find(params[:id])
+    @recipe_food = @recipe.recipe_foods.find(params[:id])
     @recipe_food.destroy
     flash[:success] = 'Recipe Food deleted successfully.'
     redirect_to user_recipe_url(@recipe.user, @recipe)

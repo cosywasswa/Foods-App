@@ -14,10 +14,10 @@
           <% else %>
             <span class="badge text-bg-secondary p-2 px-4">Private</span>
             <% end %>
-          <h5 class="mt-3">Total foods: <%= recipe.recipes_foods.length %> </h5>
+          <h5 class="mt-3">Total foods: <%= recipe.recipe_foods.length %> </h5>
           <% sum = 0 %>
           <h5>Total price : $ <% sum = 0 %>
-          <% recipe.recipes_foods.each do |food| %>
+          <% recipe.recipe_foods.each do |food| %>
             <% sum += food.food.price.to_f %>
           <% end %>
           <%= sum %>
