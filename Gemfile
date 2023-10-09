@@ -18,6 +18,10 @@ gem 'factory_bot_rails'
 
 gem 'selenium-webdriver'
 
+gem 'rspec-rails', '~> 5.0'
+
+gem 'rails-controller-testing'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
