@@ -19,7 +19,7 @@
     </div>
     <% if can? :update, @recipe%>
       <div>
-        <%= link_to "Add Ingredient", new_user_recipe_food_path(@recipe.user, @recipe.id), class: "btn btn-primary" %>
+        <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "btn btn-primary" %>
       </div>
     <%end%>
   </div>
@@ -43,8 +43,8 @@
            <td class="mb-3 col-sm-3">
            <% if can? :destroy, @recipe %>
             <div class="d-flex justify-content-center gap-2">
-             <%= button_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe.id, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-             <%= link_to "Modify" , edit_user_recipe_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
+             <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+             <%= link_to "Modify" , user_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
            <%end%>
           </div>
            </td>
