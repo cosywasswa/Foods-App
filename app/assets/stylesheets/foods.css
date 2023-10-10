@@ -60,3 +60,42 @@ nav {
   color: white;
   font-size: 20px;
 }
+
+.public-recipe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.public-recipe-card {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+  border: 1px solid black;
+  padding-right: 10rem;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.recipe-head {
+  text-align: center;
+}

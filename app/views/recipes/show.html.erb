@@ -41,7 +41,7 @@
            <td><%= fd.quantity%></td>
            <td>$<%= (fd.quantity.to_f * fd.food.price.to_f).round(2) %></td>
            <td class="mb-3 col-sm-3">
-           <% if can? :destroy, @recipe %>
+           <% if can? :manage, @recipe %>
             <div class="d-flex justify-content-center gap-2">
              <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
              <%= link_to "Modify" , user_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
