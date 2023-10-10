@@ -32,11 +32,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:recipe_id])
-    @recipe_food = @recipe.recipe_foods.find(params[:id])
+    @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
     flash[:success] = 'Recipe Food deleted successfully.'
-    redirect_to user_recipe_url(@recipe.user, @recipe)
   end
 
   private
