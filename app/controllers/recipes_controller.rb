@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to user_recipes_path
     else
-      render 'show'
+      render 'new'
     end
   end
 
