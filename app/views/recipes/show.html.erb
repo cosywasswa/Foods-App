@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "recipe.css" %>
-  <div class="wrapper">
+  <div class="wrapper-container">
     <h1>Recipe <%= @recipe.name %>
     </h1>
     <div class="recipe-container">
@@ -10,7 +10,7 @@
         </h4>
         <h4>Steps go there...</h4>
       </div>
-      <div>
+      <div class="table-cont">
     
       <%= form_for @recipe, url: public_toggle_user_recipe_path(@recipe), method: :patch, remote: true, authenticity_token: true, html: { class: 'toggle-form' } do |f| %>
         <div class="slider-container">
@@ -23,21 +23,26 @@
       <%= f.hidden_field :public, value: @recipe.public ? 0 : 1 %>
       <%= f.submit 'Toggle', class: 'hidden-submit', style: 'display: none;' %>
     <% end %>
-
-      <div class="d-flex gap-5 mt-5 mb-5">
-    <div>
-      <%= link_to "Generate Shopping List", user_shopping_list_index_path(@recipe.user, @recipe), class: "btn btn-primary" %>
     </div>
+    </div>
+
+      <div class="shop-generate">
+    <div class="shop">
+      <%= link_to "Generate Shopping List", user_shopping_list_index_path(@recipe.user, @recipe), class: "generate-btn" %>
+    </div>
+    <div class="generate">
     <% if can? :update, @recipe%>
-      <div>
-        <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "btn btn-primary" %>
+      <div class="shop">
+        <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "ingrediant-btn" %>
       </div>
     <%end%>
+    </div>
   </div>
-    <table class="table table-striped table-bordered", style="text-align: center;">
+  <div class="table-cont">
+    <table class="details-table">
       <% if @recipe.recipe_foods.any? %>
-         <thead>
-             <tr>
+         <thead class="details-head">
+             <tr class="heading-name">
              <th>Food</th>
              <th>Quantity</th>
              <th>Value</th>
@@ -47,17 +52,17 @@
      
          <tbody>
          <% @recipe.recipe_foods.each do |fd|%>
-         <tr>
+         <tr class="data-details">
            <td><%= fd.food.name%></th>
            <td><%= fd.quantity%></td>
            <td>$<%= (fd.quantity.to_f * fd.food.price.to_f).round(2) %></td>
-           <td class="mb-3 col-sm-3">
+           <td>
            <% if can? :manage, @recipe %>
-            <div class="d-flex justify-content-center gap-2">
+            <div class="delete-div">
              <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
              <%= link_to "Modify" , user_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
            <%end%>
-          </div>
+           </div>
            </td>
          </tr>
        
@@ -65,4 +70,5 @@
          <%end%>
        <%end%>
      </table>
+     </div>
   </div>

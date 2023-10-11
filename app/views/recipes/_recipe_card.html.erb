@@ -1,21 +1,24 @@
-<div class="wrapper">
-  <div class="card set-width my-3">
-    <div class="card-body space-between">
+<div class="wrapper-card">
+  <div class="card-content">
+    <div class="card-body-left">
       <div>
         <h3>
           <%= link_to recipe.name, user_recipe_path(id: recipe.id, user_id: recipe.user.id), class: "card-title" %>
         </h3>
       </div>
-    </div>
+      <div>
+      <% if can? :manage, recipe %>
+      <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "delete-btn-1" %>
+        <% end %>
+  </div>
+      </div>
 
-    <div class="card-body">
-      <span>Description of the recipe</span>
+    <div class="card-body-right">
+      <span class="card-body-1">Description for the recipe.</span>
       <p class="card-text">
         <%= recipe.description %>
       </p>
-      <% if can? :manage, recipe %>
-        <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "btn btn-danger" %>
-          <% end %>
-    </div>
+     
   </div>
+</div>
 </div>
