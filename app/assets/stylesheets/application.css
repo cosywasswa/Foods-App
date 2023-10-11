@@ -68,18 +68,38 @@ body {
   background-color: rgb(214, 252, 252);
 }
 
-.generate-btn {
-  display: flex;
+.details-table {
+  width: 600px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 10px;
   position: relative;
-  top: 10rem;
-  right: 32rem;
-  font-weight: bold;
+  top: 200px;
+  right: 200px;
 }
 
-.ingrediant-btn {
-  display: flex;
-  position: relative;
-  top: 8.5rem;
-  left: 10rem;
-  font-weight: bold;
+.details-table th,
+.table td {
+  border: 1px solid #afabab;
+}
+
+.data-details {
+  border: 1px solid black;
+}
+
+.heading-name th {
+  text-align: left;
+  padding-block: 1rem;
+  border-right: 1px solid black;
+  padding-left: 10px;
+}
+
+.data-details td {
+  text-align: left;
+  padding: 1rem;
+  border-right: 1px solid black;
+}
+
+.data-details:nth-child(even) {
+  background-color: #afabab;
 }

@@ -34,11 +34,10 @@
       </div>
     <%end%>
   </div>
-    <table class="table table-striped table-bordered", style="text-align: center;">
+    <table class="details-table">
       <% if @recipe.recipe_foods.any? %>
-      <div class="food-table">
-         <thead>
-             <tr>
+         <thead class="details-head">
+             <tr class="heading-name">
              <th>Food</th>
              <th>Quantity</th>
              <th>Value</th>
@@ -48,18 +47,17 @@
      
          <tbody>
          <% @recipe.recipe_foods.each do |fd|%>
-         <tr>
+         <tr class="data-details">
            <td><%= fd.food.name%></th>
            <td><%= fd.quantity%></td>
            <td>$<%= (fd.quantity.to_f * fd.food.price.to_f).round(2) %></td>
-           <td class="mb-3 col-sm-3">
+           <td>
            <% if can? :manage, @recipe %>
-            <div class="d-flex justify-content-center gap-2">
+            <div class="delete-div">
              <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
              <%= link_to "Modify" , user_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
            <%end%>
            </div>
-          </div>
            </td>
          </tr>
        
