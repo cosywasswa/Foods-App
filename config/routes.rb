@@ -12,6 +12,6 @@ Rails.application.routes.draw do
       patch :modify, on: :member
     end
     resources :public_recipes, only: [:index]
-    resources :shopping_list, only: [:index, :show]
+    resources :shopping_list, only: [:index]
   end
 end
