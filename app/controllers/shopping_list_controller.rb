@@ -4,6 +4,5 @@ class ShoppingListController < ApplicationController
     @foods = current_user.foods
   end
 
-  def show
-  end
+  def show; end
 end
