@@ -8,7 +8,7 @@
       </div>
       <div>
       <% if can? :manage, recipe %>
-      <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "delete-btn-1" %>
+      <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "delete-recip" %>
         <% end %>
   </div>
       </div>

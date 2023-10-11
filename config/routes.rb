@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       end
     end
     resources :foods, only: [:index, :show, :new, :create, :destroy]
-    resources :recipe_foods, except: %i[edit update]
+    resources :recipe_foods, except: %i[edit update] do
+      patch :modify, on: :member
+    end
     resources :public_recipes, only: [:index]
     resources :shopping_list, only: [:index, :show]
   end

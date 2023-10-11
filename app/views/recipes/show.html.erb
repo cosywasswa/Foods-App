@@ -27,13 +27,13 @@
     </div>
 
       <div class="shop-generate">
-    <div class="shop">
-      <%= link_to "Generate Shopping List", user_shopping_list_index_path(@recipe.user, @recipe), class: "generate-btn" %>
+    <div class="shop1">
+      <%= link_to "Generate Shopping List", user_shopping_list_index_path(@recipe.user, @recipe), class: "generate" %>
     </div>
-    <div class="generate">
+    <div class="generate1">
     <% if can? :update, @recipe%>
-      <div class="shop">
-        <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "ingrediant-btn" %>
+      <div class="shop1">
+        <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "shop" %>
       </div>
     <%end%>
     </div>
@@ -59,8 +59,14 @@
            <td>
            <% if can? :manage, @recipe %>
             <div class="delete-div">
-             <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-             <%= link_to "Modify" , user_recipe_food_path(@recipe.user, @recipe.id, fd.id), class: "btn btn-primary" %>
+             <%= button_to "Delete", user_recipe_food_path(@recipe.user, fd.id), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-fd" %>
+             <%= form_with(model: fd, url: modify_user_recipe_food_path(@recipe.user, fd.id), method: :patch, remote: true, authenticity_token: true, html: { class: 'modify-form' }) do |f| %>
+              <div class="quantity-container">
+                <%= f.number_field :quantity, value: fd.quantity, class: "quantity-input" %>
+             
+              <%= f.submit 'Modify', class: 'modify-button' %>
+              </div>
+            <% end %>
            <%end%>
            </div>
            </td>

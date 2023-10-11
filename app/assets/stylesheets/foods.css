@@ -100,3 +100,22 @@ nav {
 .recipe-head {
   text-align: center;
 }
+
+.delete-food {
+  width: 60px;
+  height: 30px;
+  background-color: blanchedalmond;
+}
+
+.add-food {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(243, 240, 52);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-left: 63rem;
+  border: 1px solid black;
+}
