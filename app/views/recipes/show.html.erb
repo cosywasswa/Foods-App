@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "recipe.css" %>
-  <div class="wrapper">
+  <div class="wrapper-container">
     <h1>Recipe <%= @recipe.name %>
     </h1>
     <div class="recipe-container">
@@ -10,7 +10,7 @@
         </h4>
         <h4>Steps go there...</h4>
       </div>
-      <div>
+      <div class="table-cont">
     
       <%= form_for @recipe, url: public_toggle_user_recipe_path(@recipe), method: :patch, remote: true, authenticity_token: true, html: { class: 'toggle-form' } do |f| %>
         <div class="slider-container">
@@ -23,17 +23,22 @@
       <%= f.hidden_field :public, value: @recipe.public ? 0 : 1 %>
       <%= f.submit 'Toggle', class: 'hidden-submit', style: 'display: none;' %>
     <% end %>
+    </div>
+    </div>
 
-      <div class="d-flex gap-5 mt-5 mb-5">
-    <div>
+      <div class="shop-generate">
+    <div class="shop">
       <%= link_to "Generate Shopping List", user_shopping_list_index_path(@recipe.user, @recipe), class: "generate-btn" %>
     </div>
+    <div class="generate">
     <% if can? :update, @recipe%>
-      <div>
+      <div class="shop">
         <%= link_to "Add Ingredient", new_user_recipe_food_path(recipe_id: @recipe.id, user_id: @recipe.user.id), class: "ingrediant-btn" %>
       </div>
     <%end%>
+    </div>
   </div>
+  <div class="table-cont">
     <table class="details-table">
       <% if @recipe.recipe_foods.any? %>
          <thead class="details-head">
@@ -65,4 +70,5 @@
          <%end%>
        <%end%>
      </table>
+     </div>
   </div>

@@ -73,9 +73,6 @@ body {
   border: 1px solid black;
   border-collapse: collapse;
   margin: 10px;
-  position: relative;
-  top: 200px;
-  right: 200px;
 }
 
 .details-table th,
