@@ -9,12 +9,12 @@
     </div>
 
     <div class="card-body">
-      <span>Description of the recipe</span>
+      <span class="card-body-1">Description for the recipe.</span>
       <p class="card-text">
         <%= recipe.description %>
       </p>
       <% if can? :manage, recipe %>
-        <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "btn btn-danger" %>
+        <%= button_to "Delete" , user_recipe_path(recipe.user, recipe.id), method: :delete, class: "delete-btn-1" %>
           <% end %>
     </div>
   </div>

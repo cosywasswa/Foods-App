@@ -103,3 +103,29 @@ body {
 .data-details:nth-child(even) {
   background-color: #afabab;
 }
+
+.card-body-1 {
+  display: flex;
+  position: relative;
+  top: -14vh;
+  left: 70vh;
+  font-size: 18px;
+}
+
+.card-text {
+  display: flex;
+  position: relative;
+  top: -15vh;
+  left: 70vh;
+  font-size: 17px;
+}
+
+.delete-btn-1 {
+  display: flex;
+  position: relative;
+  top: -100px;
+}
+
+.card-body {
+  padding: 15px;
+}
