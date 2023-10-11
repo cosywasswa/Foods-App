@@ -142,3 +142,23 @@ body {
   background-color: bisque;
   margin-bottom: 10px;
 }
+
+.quantity-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-left: -9vw;
+  padding: 10px;
+  gap: 5px;
+}
+
+.quantity-input {
+  width: 10%;
+}
+
+.delete-fd,
+.modify-button {
+  width: 60px;
+  height: 30px;
+  background-color: blanchedalmond;
+}
