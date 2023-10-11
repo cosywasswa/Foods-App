@@ -2,7 +2,7 @@
   <h1>Foods</h1>
 
   <div class="add-food-btn">
-    <%= link_to "Add food", new_user_food_path %>
+    <%= link_to "Add food", new_user_food_path, class: "add-food" %>
   </div>
   <div class="foods">
     <% if @foods.empty? %>
@@ -30,7 +30,7 @@
               <td>
                 <%= button_to "Delete", 
                   user_food_path(current_user.id, food.id), method: :delete,
-                  data: { confirm: "Delete food?" } %>
+                  data: { confirm: "Delete food?" }, class: "delete-food" %>
               </td>
             </tr>
           <% end %>
