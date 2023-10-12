@@ -2,16 +2,13 @@
 
 <div align="center">
 
-
   <h3><b>Food_App_Rails
 
 </b></h3>
 
 </div>
 
-
 # 📗 Table of Contents
-
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[Food_App_Rails
@@ -63,6 +60,7 @@ Ruby
   <summary>Tests</summary>
   <ul>
     <li><a>Rspec</a></li>
+    <li><a>Capybara</a></li>
   </ul>
 </details>
 
@@ -148,10 +146,6 @@ To run tests, run the following command:
 ```
 - Run rspec spec spec/filename.rb
 ```
-### Deployment
-
-You can deploy this project using:
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -198,7 +192,7 @@ If you like this project so please don't forget to give it a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank all code reviewers for making this project better.
+We would like to thank all code reviewers for making this project better.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
