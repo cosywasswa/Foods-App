@@ -33,7 +33,6 @@ RSpec.describe 'recipe#index', type: :feature do
       )
     ]
 
-
     visit user_recipes_url(user_id: @user1.id)
   end
   describe '#Indexpage' do

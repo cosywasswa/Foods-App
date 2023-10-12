@@ -31,7 +31,6 @@ RSpec.describe 'food#index', type: :feature do
       )
     ]
 
-
     visit user_foods_url(user_id: @user1.id)
   end
   describe '#Indexpage' do
