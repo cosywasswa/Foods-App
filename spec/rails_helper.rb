@@ -37,7 +37,7 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.before(:each, type: :feature) do
-    default_url_options[:host] = 'localhost:3000' 
+    default_url_options[:host] = 'localhost:3000'
   end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
