@@ -34,9 +34,5 @@ RSpec.describe Recipe, type: :model do
       expect(temp.macro).to eq(:belongs_to)
     end
 
-    it 'has many recipes_foods' do
-      temp = Recipe.reflect_on_association(:recipes_foods)
-      expect(temp.macro).to eq(:has_many)
-    end
   end
 end

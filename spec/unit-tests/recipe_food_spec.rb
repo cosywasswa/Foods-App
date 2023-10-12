@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
   let(:user) do
-    User.create(name: 'John Doe', email: 'johndoe@gmail.com', password: 123_456, password_confirmation: 123_456)
+    User.create(name: 'John Doe', email: 'johndoe@gmail.com', password: 123_456, confirmed_at: Time.now)
   end
   let(:recipe) do
     Recipe.create(name: 'Apples', preparation_time: '1 hour', cooking_time: '30 minutes',

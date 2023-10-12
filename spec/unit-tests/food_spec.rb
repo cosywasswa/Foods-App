@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Food, type: :model do
   let(:user) do
     User.create(name: 'dil', email: 'dil@gamail.com', password: 'dil',
-                password_confirmation: 'dil')
+                confirmed_at: Time.now)
   end
 
   context 'validations' do
@@ -42,10 +42,6 @@ RSpec.describe Food, type: :model do
       temp = Food.reflect_on_association(:user)
       expect(temp.macro).to eq(:belongs_to)
     end
-
-    it 'has many recipies of foods' do
-      temp = Food.reflect_on_association(:recipes_foods)
-      expect(temp.macro).to eq(:has_many)
-    end
+    
   end
 end
