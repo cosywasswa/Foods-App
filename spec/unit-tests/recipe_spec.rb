@@ -33,6 +33,5 @@ RSpec.describe Recipe, type: :model do
       temp = Recipe.reflect_on_association(:user)
       expect(temp.macro).to eq(:belongs_to)
     end
-
   end
 end
