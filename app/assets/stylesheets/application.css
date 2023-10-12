@@ -147,7 +147,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  margin-left: -9vw;
+  margin-left: -10vw;
   padding: 10px;
   gap: 5px;
 }

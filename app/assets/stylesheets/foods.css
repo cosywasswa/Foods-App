@@ -119,3 +119,34 @@ nav {
   margin-left: 63rem;
   border: 1px solid black;
 }
+
+.food-container-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.labelf {
+  margin-bottom: 10px; 
+}
+
+.food-btn {
+  width: 30%; 
+}
+
+.new-food-btn {
+  width: 55%;
+  height: 30px;
+}
+.name-1 {
+  margin-left: 80px;
+}
+
+.name-2 {
+  margin-left: 80px;
+}
+
+.name-3 {
+  margin-left: 60px;
+}
