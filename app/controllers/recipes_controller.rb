@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
     @recipe.save
     redirect_to user_recipe_path(@recipe), notice: "The recipe is now #{@recipe.public ? 'public' : 'private'}"
   end
-  
+
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
